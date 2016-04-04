@@ -12,7 +12,7 @@ module.exports = {
         include: __dirname + '/src'
       },
       {
-        test: /\.scss/,
+        test: /\.sass/,
         loader: 'style!css!sass',
       },
       {
