@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "production": "NODE_ENV=production webpack"
+    "production": "NODE_ENV=production webpack",
+    "start": "webpack-dev-server --inline --hot"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,7 @@
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   }
 }
