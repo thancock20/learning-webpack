@@ -1,8 +1,10 @@
 var webpack    = require('webpack');
 var CleanPlugin = require('clean-webpack-plugin');
+var ExtractPlugin = require('extract-text-webpack-plugin');
 var production = process.env.NODE_ENV === 'production';
 
 var plugins = [
+  new ExtractPlugin('bundle.css', {allChunks: true}), // <=== where should content be piped
   new webpack.optimize.CommonsChunkPlugin({
     name:      'main', // Move dependencies to our main file
     children:  true,   // Look for common dependencies in all children,
@@ -73,7 +75,7 @@ module.exports = {
       },
       {
         test:   /\.sass/,
-        loader: 'style!css!sass',
+        loader: ExtractPlugin.extract('style', 'css!sass'),
       },
       {
         test:   /\.html/,
